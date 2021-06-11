@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head%}
+    <title>Admin</title>
+{% endblock %}
+
+{% block body%}
+    <form action="/" method="post">
+
+        <h3>Incorrect Username or Password. Try Again</h3>
+        <br> <br> <br>        
+        <label for="admin">Username</label>
+        <input type="text" name="name" placeholder="username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="*********" required>
+        <input type="submit" value="Enter">
+
+    </form>
+{% endblock %}

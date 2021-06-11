@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title style="text-align: center">Students</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Students</h1>
+    <form action="/students/edit/{{courses.id}}" method="post">
+        <input type="text" name="S_name" placeholder="Student's Name" value="{{students.S_name}}">
+        <input type="text" name="C_name" placeholder="Course's Name" value="{{courses.C_name}}">
+        <input type="text" name="I_name" placeholder="Instructor's Name" value="{{instructors.I_name}}">
+        <input type="submit" value="Change Student">
+    </form>
+{% endblock %}

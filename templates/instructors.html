@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Instructors</title>
+{% endblock %}
+
+{% block body %}
+    <a href="/departments">Departments</a>
+    <a href="/instructors">Instructors</a>
+    <a href="/courses">Courses</a>
+    <a href="/students">Students</a>
+    <a href="/functions">Home page</a>
+    <hr>
+    <h1>Instructors</h1>
+        {% if instructors|length < 1 %} 
+    <h4>There are no instructors</h4>
+    {% else %}
+    <table style="text-align: center;" class = "center">
+        <tr>
+            <th>ID</th>
+            <th>Instructors Name</th>
+            <th>Department ID</th>
+            <th>Tools</th>
+        </tr>
+        {%for instructor in instructors%}
+        <tr>
+            <td>{{instructor.id}}</td>
+            <td>{{instructor.I_name}}</td>
+            <td>{{instructor.D_id}}</td>
+            <td>
+                <a href="/instructors/edit/{{instructor.id}}">Edit</a>
+                <a href="/instructors/delete/{{instructor.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <br> <br>
+    {%endif%}
+    <form action="/instructors" method="post">
+        <input type="text" name="I_name" placeholder="Instructor's Name" required>
+        <input type="text" name = "D_name" placeholder="Department's Name" required>
+        <input type="submit" value="Add Instructor">
+    </form>
+{% endblock %}  

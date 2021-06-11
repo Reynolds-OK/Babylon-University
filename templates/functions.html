@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head%}
+    <title>Function</title>
+{% endblock %}
+
+{% block body%}
+    <h4 style="text-align: center;">Group4: REYNOLDS  ||  WEPEA  ||  ALPHIE  || ISABELLA  ||  HUBERT  ||  KOFI</h4>
+    <hr>
+    <h3 style = "text-align: center;">Welcome, {{name}}</h3>
+    <h4 style = "text-align: center;">What do you want to do?</h4>
+    <a href="/departments" style = "text-align: center;"><button>Visit Departments</button></a>
+    <a href="/instructors" style = "text-align: center;"><button>Visit Instructors page</button></a>
+    <a href="/courses" style="text-align: center;"><button>Visit Courses page</button></a>
+    <a href="/students" style = "text-align: center;"><button>Visit Students page</button></a>
+{% endblock %}

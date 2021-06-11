@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title style="text-align: center">Instructors</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Instructors</h1>
+    <form action="/instructors/edit/{{instructors.id}}" method="post">
+        <input type="text" name="I_name" placeholder="Instructor's Name" value="{{instructors.I_name}}">
+        <input type="text" name="D_name" placeholder="Department's Name" value="{{departments.D_name}}">
+        <input type="submit" value="Change Instructor">
+    </form>
+{% endblock %}

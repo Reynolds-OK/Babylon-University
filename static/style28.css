@@ -1,0 +1,73 @@
+h1{
+    color: black;
+    font-family: helvetica;
+    text-align: center;
+}
+
+h2{
+    color: white;
+    font-family: helvetica;
+    font-size: 60px;
+}
+
+
+body, html{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+table, td, th {
+    border: 1px solid rgb(150, 36, 36);
+
+}
+
+td {
+    text-align:center;
+    padding: 5px;
+    height: 30px;
+    vertical-align: bottom;
+}
+
+th {
+    height: 30px
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.form {
+    margin-top: 20px;
+}
+
+.content {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+    font-family: sans-serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }

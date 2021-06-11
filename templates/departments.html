@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Departments</title>
+{% endblock %}  
+
+{% block body %}
+    <a href="/departments">Departments</a>
+    <a href="/instructors">Instructors</a>
+    <a href="/courses">Courses</a>
+    <a href="/students">Students</a>
+    <a href="/functions">Home page</a>
+    <hr>
+    <h1>Departments</h1>
+    {% if departments|length < 1 %} 
+    <h4>There are no departments</h4>
+    {% else %}
+    <table style="text-align: center;" class = "center">
+        <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Department Head</th>
+            <th>Tools</th>
+        </tr>
+        {%for department in departments%}
+        <tr>
+            <td>{{department.id}}</td>
+            <td>{{department.D_name}}</td>
+            <td>{{department.D_head}}</td>
+            <td>
+                <a href="/departments/edit/{{department.id}}">Edit</a>
+                <a href="/departments/delete/{{department.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <br> <br>
+    {%endif%}
+    <form action="/departments" method="post">
+        <input type="text" name="D_name" placeholder = "Department Name" required>
+        <input type="text" name="D_head" placeholder ="Department Head" required>
+        <input type="submit" value="Add Department">
+    </form>
+{% endblock %}

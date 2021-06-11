@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title style="text-align: center">Courses</title>
+{% endblock %}
+
+{% block body %}
+    <a href="/departments">Departments</a>
+    <a href="/instructors">Instructors</a>
+    <a href="/courses">Courses</a>
+    <a href="/students">Students</a>
+    <a href="/functions">Home page</a>
+    <hr>
+    <h1>Courses</h1>
+    {% if courses|length < 1 %} 
+        <h4>There are no courses</h4>
+    {% else %}
+    <table style="text-align: center;">
+        <tr>
+            <th>ID</th>
+            <th>Courses Name</th>
+            <th>Instructor ID</th>
+            <th>Department ID</th>
+            <th>Tools</th>
+        </tr>
+        {%for course in courses%}
+        <tr>
+            <td>{{course.id}}</td>
+            <td>{{course.C_name}}</td>
+            <td>{{course.I_id}}</td>
+            <td>{{course.D_id}}</td>
+            <td>
+                <a href="/courses/edit/{{course.id}}">Edit</a>
+                <a href="/courses/delete/{{course.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <br> <br>
+    {%endif%}
+    <form action="/courses" method="post">
+        <input type="text" name="C_name" placeholder="Course Name" required>
+        <input type="text" name="I_name" placeholder="Instructor's Name" required>
+        <input type="submit" value="Add Course">
+    </form>
+{% endblock %}

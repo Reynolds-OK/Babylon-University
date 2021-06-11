@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <title>Admin</title>
+        {% endblock %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style28.css')}}">
+    </head>
+
+    <body style="text-align: center">
+        <div class="container">
+            <img src="https://www.reading.ac.uk/~/media/images/virtual-exerience.ashx?h=297&w=640&la=en" alt="Snow" style="width:100%; height:200px;">
+            <h2 class="centered" style="font-family:helvetica;">BABYLON UNIVERSITY</h2>
+        </div>
+        <hr>
+        <div class="content"> 
+        {% block body %}
+        {% endblock %}
+        </div>
+        <br> <br>
+        <div class="footer">
+            <p>©2021 by Group4. All rights reserved</p>
+        </div>
+    </body>
+</html>

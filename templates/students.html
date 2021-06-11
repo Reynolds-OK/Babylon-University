@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Students</title>
+{% endblock %}
+
+{% block body %}
+    <a href="/departments">Departments</a>
+    <a href="/instructors">Instructors</a>
+    <a href="/courses">Courses</a>
+    <a href="/students">Students</a>
+    <a href="/functions">Home page</a>
+    <hr>
+    <h1>Students</h1>
+    {% if students|length < 1 %} 
+        <h4>There are no students </h4>
+    {% else %}
+    <table style="text-align: center;" class = "center">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Course ID</th>
+            <th>Instructor ID</th>
+            <th>Department ID</th>
+            <th>Tools</th>
+        </tr>
+        {%for student in students%}
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.S_name}}</td>
+            <td>{{student.C_id}}</td>
+            <td>{{student.I_id}}</td>
+            <td>{{student.D_id}}</td>
+            <td>
+                <a href="/students/edit/{{student.id}}">Edit</a>
+                <a href="/students/delete/{{student.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor%}
+    </table>
+    <br> <br>
+    {%endif%}
+    <form action="/students" method="post">
+        <input type="text" name="S_name" placeholder="Student's Name" required>
+        <input type="text" name="C_name" placeholder="Course's Name" required>
+        <input type="text" name="I_name" placeholder="Instructor's Name" required>
+        <input type="submit" value="Add Student">
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title style="text-align: center">Departments</title>
+{% endblock %}
+
+{% block body %}
+<h1>Departments</h1>
+    <form action="/departments/edit/{{departments.id}}" method="post">
+        <input type="text" name="D_name" placeholder="Department Name" value="{{departments.D_name}}">
+        <input type="text" name="D_head" placeholder="Department Head" value="{{departments.D_head}}">
+        <input type="submit" value="Change Department">
+    </form>
+{% endblock %}
